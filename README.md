@@ -30,6 +30,12 @@ sys.path.append("/path/to/my/windpsd/project")
 ```
 - Others errors are might be raised by the main function. Then please check if your settings are correct.
 
+## Example output
+The Figure shows two wind dependent PSD spectra in 2012 (a) and 2019 (b). In this time period six
+wind turbines have been installed in the vicinity of that station, leading to the massive
+peaks in the 2019 spectrum.
+![](./examples/psd_bavn.png)
+
 ## Citation
 - Heuel, J., & Friederich, W. (2022). Suppression of wind turbine noise from seismological data using nonlinear thresholding and denoising autoencoder. Journal of Seismology, 26(5), 913-934.
 - Stammler, K., & Ceranna, L. (2016). Influence of wind turbines on seismic records of the Gräfenberg array. Seismological Research Letters, 87(5), 1075-1081.
