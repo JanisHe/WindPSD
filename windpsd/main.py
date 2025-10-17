@@ -21,6 +21,15 @@ from windpsd.data_io import get_waveforms, fetch_metostat
 
 
 def main(parfile: Union[str, dict], verbose: bool = True):
+    """
+    Main function to compute wind dependent PSD spectra.
+    The function either takes the filename of a parfile or a dictionary with all relevant
+    parameters from the parfile.
+
+    :param parfile: filename or dictionary that controls parameters to compute wind dependent PSDs.
+    :param verbose: If True, the loaded parameters will be printed out. Default is True.
+    :return:
+    """
     # Read parameter file
     if isinstance(parfile, str):
         with open(parfile, "r") as f:

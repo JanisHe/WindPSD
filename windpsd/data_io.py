@@ -183,7 +183,22 @@ def fetch_metostat(
     location: str,
     channel: str,
     elevation: int = 20,
-):
+) -> (np.array, np.array):
+    """
+    Loading hourly wind speed data at a given seismological station.
+    The function returns to numpy arrays, where the first contains the datetimes
+    and the second the wind speed data in m/s.
+
+    :param inventory: Inventory file of seismological station
+    :param starttime: Start time of period
+    :param endtime: End time of period
+    :param network: Name of seismic network
+    :param station: Name of seismic station
+    :param location: Location of seismic station
+    :param channel: Channel name, e.g. HHZ, HHN, HHE
+    :param elevation: Elevation in m above ground to load wind speed data with meteostat
+    :return:
+    """
     # Read inventory from seismic station
     if isinstance(inventory, str):
         inventory = obspy.read_inventory(inventory)

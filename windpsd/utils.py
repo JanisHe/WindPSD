@@ -1,12 +1,18 @@
 import os
 import obspy
 
+from typing import Union
 from pathlib import Path
 
 import numpy as np
 
 
-def convert2utc(array):
+def convert2utc(array: Union[list, np.array]) -> list:
+    """
+    Converting numpy datetime objects to obspy UTCDateTime.
+
+    :param array: array containing datetime.datetime or numpy datetime objects.
+    """
     array_out = []
     for i, value in enumerate(array):
         if isinstance(value, np.datetime64) is True:
@@ -19,9 +25,9 @@ def convert2utc(array):
 
 def check_parameters(parameters: dict) -> dict:
     """
+    Checking input parameters for WindPSD main function.
 
-    :param parameters:
-    :return:
+    :param parameters: Dictionary with loaded parameters
     """
     # Converting start- and end time to obspy UTCDateTime format
     if isinstance(parameters["starttime"], str):
