@@ -1,0 +1,24 @@
+# Parameter file to control settings for WindPSD
+starttime: 2025-10-01 00:00            # Start time of data to analyse (Format: YYYY-MM-DD HH:MM)
+endtime: 2025-10-04 23:59              # End time of data to analyse
+sds_path: /data_scc/KABBA_archive_SDS  # SDS pathname of seismological data
+network: KB                            # Network name
+station: DZA11                         # Station name
+location: "00"                         # Location code of station (can be empty) | Use "", otherwise location can be read as a number
+channel: HHZ.D                         # Channel name, including component
+response_file: /home/jheuel/data/metadata/lausitz.xml # Filename with response information of station
+elevation: 20                          # Optional | Fetch wind speed data in height (m above ground). Default is 20 m
+# Parameters for wind speed binning and averaging of PSDs in each bin
+binsize: 1          # Size of a bin in m/s (or rpm) to bin PSD wrt windspeeds or rotation
+windmin: 0          # Minimum wind speed bin (lowest bin is windmin+binsize)
+windmax: 8          # Maximum wind speed bin
+numquantile: 75     # Quantile in % to average PSD spectra
+smooth_width: 0.05  # Bandwidth to smooth spectra using a moving average
+# Parameters for plotting
+x_min: 1           # Limits for frequency (x-axis) in Hz
+x_max: 10
+y_min: -151        # Limits for y-axis
+y_max: -90
+decibel: True      # y-axis in dB or in nm/s**2
+colorbar: viridis  # Colorbar for wind speeds (https://matplotlib.org/examples/color/colormaps_reference.html)
+save_plot:         # If set, plot is saved at the pathname and format, otherwise the Figure is shown
